@@ -1,11 +1,12 @@
 import { ChangeEvent } from 'react';
 
-interface iTextInput {
+interface ITextInput {
   className: string,
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void,
   labelText: string,
+  minLength?: string,
   name: string,
   value: string,
 }
 
-export default iTextInput;
+export default ITextInput;
