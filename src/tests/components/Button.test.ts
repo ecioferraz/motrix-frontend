@@ -20,24 +20,26 @@ describe('Components', () => {
     const onClick = jest.fn();
 
     beforeEach(async () => {
-      act(() => root?.render(
-        Button({
-          className: 'test className',
-          handleClick: onClick,
-          name: 'test name',
-          type: 'button',
-        }),
-      ));
+      act(() =>
+        root?.render(
+          Button({
+            className: 'test className',
+            handleClick: onClick,
+            name: 'test name',
+            type: 'button',
+          })
+        )
+      );
 
       button = container?.querySelector('button');
     });
-  
-    afterEach(() => button = null);
+
+    afterEach(() => (button = null));
 
     it('should render a button', () => {
       expect(button).toBeTruthy();
     });
-  
+
     it('should render button\'s properties correctly', () => {
       expect(button?.getAttribute('class')).toBe('test className');
       expect(button?.getAttribute('name')).toBe('test name');

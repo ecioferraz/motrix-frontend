@@ -10,13 +10,13 @@ export default function Button({
 }: IButton) {
   return (
     <button
-      className={ className }
-      disabled={ disabled }
-      name={ name }
-      onClick={ handleClick }
-      type={ type }
+      className={className}
+      disabled={disabled}
+      name={name}
+      onClick={handleClick}
+      type={type}
     >
-      { name }
+      {name}
     </button>
   );
 }

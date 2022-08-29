@@ -15,10 +15,10 @@ export default function TextInput({
       <input
         className={className}
         id={name}
-        min={ minLength }
+        min={minLength}
         name={name}
         onChange={handleChange}
-        type="text"
+        type='text'
         value={value}
       />
     </label>

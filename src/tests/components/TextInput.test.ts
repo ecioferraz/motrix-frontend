@@ -28,7 +28,7 @@ describe('Components', () => {
             labelText: 'test: labelText',
             name: 'test name',
             value: 'test value',
-          }),
+          })
         );
       });
 
