@@ -22,9 +22,9 @@ describe('Components', () => {
     beforeEach(async () => {
       act(() => root?.render(
         Button({
-          name: 'test',
+          className: 'test className',
           handleClick: onClick,
-          className: 'test',
+          name: 'test name',
           type: 'button',
         }),
       ));
@@ -39,13 +39,13 @@ describe('Components', () => {
     });
   
     it('should render button\'s properties correctly', () => {
+      expect(button?.getAttribute('class')).toBe('test className');
+      expect(button?.getAttribute('name')).toBe('test name');
       expect(button?.getAttribute('type')).toBe('button');
-      expect(button?.getAttribute('name')).toBe('test');
-      expect(button?.getAttribute('class')).toBe('test');
     });
 
     it('should render button\'s inner text correctly', () => {
-      expect(button?.textContent).toBe('test');
+      expect(button?.textContent).toBe('test name');
     });
 
     it('should not render a disabled and clickable button', () => {
