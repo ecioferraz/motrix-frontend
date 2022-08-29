@@ -28,18 +28,18 @@ describe('Components', () => {
             })
           );
         });
-  
+
         textCard = container?.querySelector('h1');
       });
-  
+
       afterEach(() => {
         textCard = null;
       });
-  
+
       it('should render a div', () => {
         expect(textCard).toBeTruthy();
       });
-  
+
       it('should render a h1 element inside of the div', () => {
         expect(textCard?.className).toBe('test className');
         expect(textCard?.tagName).toBe('H1');
@@ -52,23 +52,24 @@ describe('Components', () => {
         act(() => {
           root?.render(
             TextCard({
+              as: 'p',
               className: 'test className',
               text: 'test text',
             })
           );
         });
-  
+
         textCard = container?.querySelector('p');
       });
-  
+
       afterEach(() => {
         textCard = null;
       });
-  
+
       it('should render a div', () => {
         expect(textCard).toBeTruthy();
       });
-  
+
       it('should render a paragraph element inside of the div', () => {
         expect(textCard?.className).toBe('test className');
         expect(textCard?.tagName).toBe('P');

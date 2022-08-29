@@ -2,7 +2,7 @@ import React from 'react';
 import ITextCard from './ITextCard';
 
 export default function TextCard({
-  as: Tag = 'p',
+  as: Tag = 'span',
   text,
   className,
 }: ITextCard) {
