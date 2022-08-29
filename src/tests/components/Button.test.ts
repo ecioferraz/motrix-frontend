@@ -3,7 +3,7 @@ import { act } from 'react-dom/test-utils';
 import { Button } from '../../components';
 
 describe('Components', () => {
-  let container: Element | null = null;
+  let container: HTMLDivElement | null = null;
   let root: Root | null = null;
 
   beforeEach(() => {
