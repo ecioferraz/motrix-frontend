@@ -1,10 +1,10 @@
 import { MouseEventHandler } from 'react';
 
 interface iButton {
-  name: string,
-  handleClick?: MouseEventHandler<HTMLButtonElement>,
-  disabled?: boolean,
   className: string,
+  disabled?: boolean,
+  handleClick?: MouseEventHandler<HTMLButtonElement>,
+  name: string,
   type: 'button' | 'submit',
 }
 

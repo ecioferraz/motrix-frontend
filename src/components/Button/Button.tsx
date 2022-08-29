@@ -2,19 +2,19 @@ import React from 'react';
 import IButton from './IButton';
 
 export default function Button({
-  name,
-  handleClick,
-  disabled,
   className,
+  disabled,
+  handleClick,
+  name,
   type,
 }: IButton) {
   return (
     <button
-      type={ type }
+      className={ className }
+      disabled={ disabled }
       name={ name }
       onClick={ handleClick }
-      disabled={ disabled }
-      className={ className }
+      type={ type }
     >
       { name }
     </button>
