@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { EditPost, Home, Post } from '../pages';
+import { EditPost, Home, UploadPost } from '../pages';
 
 export default function Router() {
   return (
@@ -11,7 +11,7 @@ export default function Router() {
       />
       <Route
         path='/post'
-        element={ <Post /> }
+        element={ <UploadPost /> }
       />
       <Route
         path='/edit/:id'

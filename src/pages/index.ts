@@ -1,5 +1,5 @@
 import EditPost from './EditPost';
 import Home from './Home';
-import Post from './Post';
+import UploadPost from './UploadPost';
 
-export { EditPost, Home, Post };
+export { EditPost, Home, UploadPost };
