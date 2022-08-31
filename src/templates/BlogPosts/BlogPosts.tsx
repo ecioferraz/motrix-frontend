@@ -22,9 +22,10 @@ export default function BlogPosts() {
     ? <TextCard className='loading' text='Carregando...' />
     : (
       <>
-        {posts.map(({ history }) => (
+        {posts.map(({ history, _id: id }) => (
           <BlogCard
             body={history[0].body}
+            id={id}
             key={history[0].updatedAt.toString()}
             title={history[0].title}
           />
