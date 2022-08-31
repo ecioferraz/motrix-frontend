@@ -1,3 +1,4 @@
 import PostForm from './PostForm';
+import BlogPosts from './BlogPosts';
 
-export { PostForm };
+export { PostForm, BlogPosts };
