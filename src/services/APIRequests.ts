@@ -1,5 +1,5 @@
 import axios from 'axios';
-import IPost from '../interfaces/IPost';
+import { IPost } from '../interfaces/IPost';
 
 const baseURL = 'http://localhost:3001';
 
