@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { TextCard } from '../../components';
 import IApiPost from '../../interfaces/IPost';
 import { getData } from '../../services/APIRequests';
-import parse from 'html-react-parser';
+import { BlogCard } from '../';
 
 export default function BlogPosts() {
   const [posts, setPosts] = useState<IApiPost[]>([]);
@@ -23,19 +23,11 @@ export default function BlogPosts() {
     : (
       <>
         {posts.map(({ history }) => (
-          <section
-            className='blog-post'
+          <BlogCard
+            body={history[0].body}
             key={history[0].updatedAt.toString()}
-          >
-            <TextCard
-              as='h1'
-              className='title'
-              text={history[0].title}
-            />
-            <div className='body'>
-              {parse(history[0].body)}
-            </div>
-          </section>
+            title={history[0].title}
+          />
         ))}
       </>
     );
