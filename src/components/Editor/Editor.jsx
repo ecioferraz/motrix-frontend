@@ -29,30 +29,35 @@ function MenuBar({ editor }) {
     <div className='menuBar'>
       <div>
         <button
+          type='button'
           onClick={() => editor.chain().focus().toggleBold().run()}
           className={editor.isActive('bold') ? 'is_active' : ''}
         >
           <FaBold />
         </button>
         <button
+          type='button'
           onClick={() => editor.chain().focus().toggleItalic().run()}
           className={editor.isActive('italic') ? 'is_active' : ''}
         >
           <FaItalic />
         </button>
         <button
+          type='button'
           onClick={() => editor.chain().focus().toggleUnderline().run()}
           className={editor.isActive('underline') ? 'is_active' : ''}
         >
           <FaUnderline />
         </button>
         <button
+          type='button'
           onClick={() => editor.chain().focus().toggleStrike().run()}
           className={editor.isActive('strike') ? 'is_active' : ''}
         >
           <FaStrikethrough />
         </button>
         <button
+          type='button'
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 2 }).run()
           }
@@ -63,6 +68,7 @@ function MenuBar({ editor }) {
           <FaHeading />
         </button>
         <button
+          type='button'
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 3 }).run()
           }
@@ -73,18 +79,22 @@ function MenuBar({ editor }) {
           <FaHeading className="heading3" />
         </button>
         <button
+          type='button'
+
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={editor.isActive('bulletList') ? 'is_active' : ''}
         >
           <FaListUl />
         </button>
         <button
+          type='button'
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
           className={editor.isActive('orderedList') ? 'is_active' : ''}
         >
           <FaListOl />
         </button>
         <button
+          type='button'
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
           className={editor.isActive('blockquote') ? 'is_active' : ''}
         >
@@ -92,10 +102,16 @@ function MenuBar({ editor }) {
         </button>
       </div>
       <div>
-        <button onClick={() => editor.chain().focus().undo().run()}>
+        <button
+          type='button'
+          onClick={() => editor.chain().focus().undo().run()}
+        >
           <FaUndo />
         </button>
-        <button onClick={() => editor.chain().focus().redo().run()}>
+        <button
+          type='button'
+          onClick={() => editor.chain().focus().redo().run()}
+        >
           <FaRedo />
         </button>
       </div>
@@ -103,14 +119,14 @@ function MenuBar({ editor }) {
   );
 }
 
-export default function Editor({ setBody }) {
+export default function Editor({ setBody, content }) {
   const editor = useEditor({
     extensions: [
       StarterKit,
       Underline,
     ],
-    content: '',
-
+    content,
+    
     onUpdate: ({ editor }) => setBody(editor.getHTML()),
   });
 
