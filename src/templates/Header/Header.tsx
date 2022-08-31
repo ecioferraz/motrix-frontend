@@ -8,12 +8,11 @@ export default function Header() {
         <HeaderLink
           className='home-link'
           name='Home'
-          path='/'
         />
         <HeaderLink
           className='post-link'
           name='Post'
-          path='/post'
+          path='post'
         />
       </nav>
     </header>

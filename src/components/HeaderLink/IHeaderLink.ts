@@ -1,7 +1,7 @@
 interface IHeaderLink {
   className: string;
   name: string;
-  path: string;
+  path?: string;
 }
 
 export default IHeaderLink;
