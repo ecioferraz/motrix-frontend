@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { TextCard } from '../../../components';
-import IApiPost from '../../../interfaces/IPost';
-import { getData } from '../../../services/APIRequests';
+import { TextCard } from '../../components';
+import IApiPost from '../../interfaces/IPost';
+import { getData } from '../../services/APIRequests';
 import parse from 'html-react-parser';
 
 export default function BlogPosts() {
@@ -13,7 +13,6 @@ export default function BlogPosts() {
       const { data } = await getData('/');
       setPosts(data);
       setIsLoading(false);
-      console.log(data);
     };
 
     getPosts();
