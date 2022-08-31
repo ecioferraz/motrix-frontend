@@ -1,7 +1,6 @@
 
 import React, { FormEvent, useState } from 'react';
-import { Button, TextInput } from '../../components';
-import Editor from '../../components/Editor/Editor';
+import { Button, Editor, TextInput } from '../../components';
 import { postData } from '../../services/APIRequests';
 
 export default function PostForm() {
@@ -10,9 +9,10 @@ export default function PostForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await postData('/', {title, body, updatedAt: new Date()});
+    const { data } = await postData('/', {title, body, updatedAt: new Date()});
     setTitle('');
     setBody('');
+    console.log(data._id);
     // redirect to post instead
   };
 
