@@ -3,6 +3,8 @@ import { PostForm } from '../../templates';
 
 export default function EditPost() {
   return (
-    <PostForm />
+    <main>
+      <PostForm />
+    </main>
   );
 }
