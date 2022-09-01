@@ -31,28 +31,44 @@ function MenuBar({ editor }) {
         <button
           type='button'
           onClick={() => editor.chain().focus().toggleBold().run()}
-          className={editor.isActive('bold') ? 'is_active' : ''}
+          className={
+            editor.isActive('editor-btn bold')
+              ? 'is_active editor-btn'
+              : 'editor-btn'
+          }
         >
           <FaBold />
         </button>
         <button
           type='button'
           onClick={() => editor.chain().focus().toggleItalic().run()}
-          className={editor.isActive('italic') ? 'is_active' : ''}
+          className={
+            editor.isActive('editor-btn italic')
+              ? 'is_active editor-btn'
+              : 'editor-btn'
+          }
         >
           <FaItalic />
         </button>
         <button
           type='button'
           onClick={() => editor.chain().focus().toggleUnderline().run()}
-          className={editor.isActive('underline') ? 'is_active' : ''}
+          className={
+            editor.isActive('editor-btn underline')
+              ? 'is_active editor-btn'
+              : 'editor-btn'
+          }
         >
           <FaUnderline />
         </button>
         <button
           type='button'
           onClick={() => editor.chain().focus().toggleStrike().run()}
-          className={editor.isActive('strike') ? 'is_active' : ''}
+          className={
+            editor.isActive('editor-btn strike')
+              ? 'is_active editor-btn'
+              : 'editor-btn'
+          }
         >
           <FaStrikethrough />
         </button>
@@ -62,7 +78,9 @@ function MenuBar({ editor }) {
             editor.chain().focus().toggleHeading({ level: 2 }).run()
           }
           className={
-            editor.isActive('heading', { level: 2 }) ? 'is_active' : ''
+            editor.isActive('editor-btn heading', { level: 2 })
+              ? 'is_active editor-btn'
+              : 'editor-btn'
           }
         >
           <FaHeading />
@@ -73,30 +91,43 @@ function MenuBar({ editor }) {
             editor.chain().focus().toggleHeading({ level: 3 }).run()
           }
           className={
-            editor.isActive('heading', { level: 3 }) ? 'is_active' : ''
+            editor.isActive('editor-btn heading', { level: 3 })
+              ? 'is_active editor-btn'
+              : 'editor-btn'
           }
         >
-          <FaHeading className="heading3" />
+          <FaHeading className='heading3' />
         </button>
         <button
           type='button'
-
           onClick={() => editor.chain().focus().toggleBulletList().run()}
-          className={editor.isActive('bulletList') ? 'is_active' : ''}
+          className={
+            editor.isActive('editor-btn bulletList')
+              ? 'is_active editor-btn'
+              : 'editor-btn'
+          }
         >
           <FaListUl />
         </button>
         <button
           type='button'
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
-          className={editor.isActive('orderedList') ? 'is_active' : ''}
+          className={
+            editor.isActive('editor-btn orderedList')
+              ? 'is_active editor-btn'
+              : 'editor-btn'
+          }
         >
           <FaListOl />
         </button>
         <button
           type='button'
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
-          className={editor.isActive('blockquote') ? 'is_active' : ''}
+          className={
+            editor.isActive('editor-btn blockquote')
+              ? 'is_active editor-btn'
+              : 'editor-btn'
+          }
         >
           <FaQuoteLeft />
         </button>
@@ -105,12 +136,14 @@ function MenuBar({ editor }) {
         <button
           type='button'
           onClick={() => editor.chain().focus().undo().run()}
+          className='editor-btn'
         >
           <FaUndo />
         </button>
         <button
           type='button'
           onClick={() => editor.chain().focus().redo().run()}
+          className='editor-btn'
         >
           <FaRedo />
         </button>
@@ -121,12 +154,9 @@ function MenuBar({ editor }) {
 
 export default function Editor({ setBody, content }) {
   const editor = useEditor({
-    extensions: [
-      StarterKit,
-      Underline,
-    ],
+    extensions: [StarterKit, Underline],
     content,
-    
+
     onUpdate: ({ editor }) => setBody(editor.getHTML()),
   });
 
