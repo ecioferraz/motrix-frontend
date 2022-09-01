@@ -1,12 +1,12 @@
-
 import React, { FormEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Button, Editor, TextInput } from '../../components';
+import { Button, Editor, TextCard, TextInput } from '../../components';
 import { getData, postData, updateData } from '../../services/APIRequests';
 
 export default function PostForm() {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
   
@@ -20,9 +20,12 @@ export default function PostForm() {
           setBody(data.history[0].body);
           setTitle(data.history[0].title);
         }
+        setIsLoading(false);
       };
 
       getPost();
+    } else {
+      setIsLoading(false);
     }
   }, []);
 
@@ -37,22 +40,23 @@ export default function PostForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <TextInput
-        className='title-input'
-        handleChange={({ target: { value } }) => setTitle(value)}
-        labelText='Título:'
-        name='title'
-        value={title}
-        minLength='3'
-      />
-      <Editor setBody={setBody} content={body} />
-      <Button
-        className='submit-btn'
-        name='Enviar'
-        type='submit'
-        disabled={title.length < 3}
-      />
-    </form>
+    isLoading ? <TextCard className='loading' text='Carregando....' />
+      : <form onSubmit={handleSubmit}>
+        <TextInput
+          className='title-input'
+          handleChange={({ target: { value } }) => setTitle(value)}
+          labelText='Título:'
+          name='title'
+          value={title}
+          minLength='3'
+        />
+        <Editor setBody={setBody} content={body} />
+        <Button
+          className='submit-btn'
+          name='Enviar'
+          type='submit'
+          disabled={title.length < 3}
+        />
+      </form>
   );
 }
