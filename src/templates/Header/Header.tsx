@@ -4,8 +4,8 @@ import './styles.css';
 
 export default function Header() {
   return (
-    <header className='header'>
-      <nav className='header-nav'>
+    <header>
+      <nav>
         <RedirectLink
           className='home-link'
           name='Home'
