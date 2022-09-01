@@ -4,13 +4,15 @@ import { Button, RedirectLink, TextCard } from '../../components';
 import parse from 'html-react-parser';
 import { IPost } from '../../interfaces/IPost';
 
+import './styles.css';
+
 interface IBlogCard {
-  body: IPost[],
-  id?: string,
-  title: string,
+  body: IPost[];
+  id?: string;
+  title: string;
 }
 
-export default function BlogCard({body, id, title}: IBlogCard) {
+export default function BlogCard({ body, id, title }: IBlogCard) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -18,36 +20,28 @@ export default function BlogCard({body, id, title}: IBlogCard) {
 
   return (
     <div className='blog-card'>
-      {
-        !pathname.includes('history') && (
-          <Button
-            className='edit-btn'
-            name='edit'
-            type='button'
-            handleClick={handleClick}
-          />
-        )
-      }
-      {
-        body.length > 1 && !pathname.includes('history') && (
-          <RedirectLink
-            className='history-link'
-            name='(edited)'
-            path={`post/history/${id}`}
-          />
-        )
-      }
-      <section
-        className='blog-post'
-      >
+      {!pathname.includes('history') && (
+        <Button
+          className='edit-btn'
+          name='edit'
+          type='button'
+          handleClick={handleClick}
+        />
+      )}
+      <section className='blog-post'>
         <TextCard
           as='h1'
           className='title'
           text={title}
         />
-        <div className='body'>
-          {parse(body[0].body)}
-        </div>
+        {body.length > 1 && !pathname.includes('history') && (
+          <RedirectLink
+            className='history-link'
+            name='(edited)'
+            path={`post/history/${id}`}
+          />
+        )}
+        <div className='body'>{parse(body[0].body)}</div>
       </section>
     </div>
   );
