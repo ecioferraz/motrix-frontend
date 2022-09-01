@@ -21,7 +21,7 @@ export default function BlogPosts() {
   return isLoading
     ? <TextCard className='loading' text='Carregando...' />
     : (
-      <>
+      <section className='blog-cards'>
         {posts.map(({ history, _id: id }) => (
           <BlogCard
             body={history}
@@ -30,6 +30,6 @@ export default function BlogPosts() {
             title={history[0].title}
           />
         ))}
-      </>
+      </section>
     );
 }
