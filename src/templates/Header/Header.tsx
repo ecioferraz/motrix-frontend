@@ -1,5 +1,6 @@
 import React from 'react';
 import { RedirectLink } from '../../components';
+import './styles.css';
 
 export default function Header() {
   return (
@@ -10,8 +11,8 @@ export default function Header() {
           name='Home'
         />
         <RedirectLink
-          className='post-link'
-          name='Post'
+          className='upload-link'
+          name='Upload'
           path='upload'
         />
       </nav>
