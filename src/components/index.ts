@@ -1,13 +1,13 @@
 import Button from './Button';
 import Editor from './Editor';
-import HeaderLink from './HeaderLink';
+import RedirectLink from './RedirectLink';
 import TextCard from './TextCard';
 import TextInput from './TextInput';
 
 export {
   Button,
   Editor,
-  HeaderLink,
+  RedirectLink,
   TextCard,
   TextInput,
 };

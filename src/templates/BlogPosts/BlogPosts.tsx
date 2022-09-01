@@ -24,7 +24,7 @@ export default function BlogPosts() {
       <>
         {posts.map(({ history, _id: id }) => (
           <BlogCard
-            body={history[0].body}
+            body={history}
             id={id}
             key={history[0].updatedAt.toString()}
             title={history[0].title}

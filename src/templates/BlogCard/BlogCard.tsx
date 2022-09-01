@@ -1,26 +1,42 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button, TextCard } from '../../components';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Button, RedirectLink, TextCard } from '../../components';
+import parse from 'html-react-parser';
+import { IPost } from '../../interfaces/IPost';
 
 interface IBlogCard {
-  body: string,
-  id: string,
+  body: IPost[],
+  id?: string,
   title: string,
 }
 
 export default function BlogCard({body, id, title}: IBlogCard) {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const handleClick = () => navigate(`/edit/${id}`);
 
   return (
     <div>
-      <Button
-        className='edit-btn'
-        name='edit'
-        type='button'
-        handleClick={handleClick}
-      />
+      {
+        !pathname.includes('history') && (
+          <Button
+            className='edit-btn'
+            name='edit'
+            type='button'
+            handleClick={handleClick}
+          />
+        )
+      }
+      {
+        body.length > 1 && !pathname.includes('history') && (
+          <RedirectLink
+            className='history-link'
+            name='(edited)'
+            path={`post/history/${id}`}
+          />
+        )
+      }
       <section
         className='blog-post'
       >
@@ -30,7 +46,7 @@ export default function BlogCard({body, id, title}: IBlogCard) {
           text={title}
         />
         <div className='body'>
-          {body}
+          {parse(body[0].body)}
         </div>
       </section>
     </div>
