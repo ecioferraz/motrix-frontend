@@ -20,17 +20,21 @@ export default function PostHistory() {
     getPostHistory();
   }, []);
 
-  return isLoading
-    ? <TextCard className='loading' text='Carregando...' />
-    : (
-      <>
-        {postHistory.map(({ title, updatedAt }) => (
-          <BlogCard
-            body={postHistory}
-            key={updatedAt.toString()}
-            title={title}
-          />
-        ))}
-      </>
-    );
+  return (
+    <main>
+      {isLoading ? (
+        <TextCard className='loading' text='Carregando...' />
+      ) : (
+        <>
+          {postHistory.map(({ title, updatedAt }) => (
+            <BlogCard
+              body={postHistory}
+              key={updatedAt.toString()}
+              title={title}
+            />
+          ))}
+        </>
+      )}
+    </main>
+  );
 }

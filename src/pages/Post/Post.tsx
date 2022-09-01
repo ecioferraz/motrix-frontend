@@ -21,12 +21,15 @@ export default function Post() {
   });
 
   return (
-    isLoading ? <TextCard className='loading' text='Carregando...' />
-      : (
+    <main>
+      {isLoading ? (
+        <TextCard className='loading' text='Carregando...' />
+      ) : (
         <BlogCard
           body={post?.history as IPost[]}
           title={post?.history[0].title as string}
         />
-      ) 
+      )}
+    </main>
   );
 }
