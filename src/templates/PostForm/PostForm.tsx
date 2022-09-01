@@ -1,7 +1,8 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Button, Editor, TextCard, TextInput } from '../../components';
+import { Button, TextCard, TextInput } from '../../components';
 import { getData, postData, updateData } from '../../services/APIRequests';
+import Editor from '../Editor';
 
 export default function PostForm() {
   const [title, setTitle] = useState('');
