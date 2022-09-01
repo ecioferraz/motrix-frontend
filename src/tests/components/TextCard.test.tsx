@@ -1,3 +1,4 @@
+import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { TextCard } from '../../components';
@@ -21,11 +22,11 @@ describe('Components', () => {
       beforeEach(() => {
         act(() => {
           root?.render(
-            TextCard({
-              as: 'h1',
-              className: 'test className',
-              text: 'test text',
-            })
+            <TextCard
+              as='h1'
+              className='test className'
+              text='test text'
+            />
           );
         });
 

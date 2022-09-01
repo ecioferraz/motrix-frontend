@@ -1,3 +1,4 @@
+import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { Button } from '../../components';
@@ -22,12 +23,12 @@ describe('Components', () => {
     beforeEach(async () => {
       act(() =>
         root?.render(
-          Button({
-            className: 'test className',
-            handleClick: onClick,
-            name: 'test name',
-            type: 'button',
-          })
+          <Button
+            className='test className'
+            handleClick={onClick}
+            name='test name'
+            type='button'
+          />
         )
       );
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { createRoot, Root } from 'react-dom/client';
 import { act, Simulate } from 'react-dom/test-utils';
 import { TextInput } from '../../components';
@@ -22,13 +23,13 @@ describe('Components', () => {
     beforeEach(() => {
       act(() => {
         root?.render(
-          TextInput({
-            className: 'test className',
-            handleChange: onChange,
-            labelText: 'test: labelText',
-            name: 'test name',
-            value: 'test value',
-          })
+          <TextInput
+            className='test className'
+            handleChange={onChange}
+            labelText='test: labelText'
+            name='test name'
+            value='test value'
+          />
         );
       });
 
