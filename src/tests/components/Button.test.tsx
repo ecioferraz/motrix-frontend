@@ -51,7 +51,7 @@ describe('Components', () => {
       expect(button?.textContent).toBe('test name');
     });
 
-    it('should not render a disabled and clickable button', () => {
+    it('should render a clickable button', () => {
       expect(button).not.toBeDisabled();
 
       act(() => button?.click());
