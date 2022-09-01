@@ -1,7 +1,7 @@
-interface IHeaderLink {
+interface IRedirectLink {
   className: string;
   name: string;
   path?: string;
 }
 
-export default IHeaderLink;
+export default IRedirectLink;

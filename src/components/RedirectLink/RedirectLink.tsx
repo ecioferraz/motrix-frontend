@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import IHeaderLink from './IHeaderLink';
+import IRedirectLink from './IRedirectLink';
 
-export default function HeaderLink({
+export default function RedirectLink({
   className,
   name,
   path = '',
-}: IHeaderLink) {
+}: IRedirectLink) {
   return (
     <Link to={`/${path}`} className={className}>
       {name}
