@@ -3,6 +3,7 @@ header {
   border-bottom: 1px groove #fff;
   box-shadow: #858383 0 2px 15px;
   color: #fff;
+  margin-bottom: 3vh;
   width: 100vw;
 }
 
@@ -26,6 +27,7 @@ nav {
 
 .home-link:hover, .upload-link:hover {
   background-color: rgba(230, 230, 230, 0.8);
+  border-radius: 0 0 1px 1px;
   box-shadow: #424242 0 1px 3px;
   transition: .7s;
 }
