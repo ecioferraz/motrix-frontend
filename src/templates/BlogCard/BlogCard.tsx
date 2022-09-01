@@ -17,7 +17,7 @@ export default function BlogCard({body, id, title}: IBlogCard) {
   const handleClick = () => navigate(`/edit/${id}`);
 
   return (
-    <div>
+    <div className='blog-card'>
       {
         !pathname.includes('history') && (
           <Button
