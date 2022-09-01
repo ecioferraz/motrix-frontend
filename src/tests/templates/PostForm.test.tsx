@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { PostForm } from '../../templates';
 
 const TITLE_INPUT = 'input[name="title"]';
-const EDITOR = 'div[class="text-editor"]';
+const EDITOR = 'div[class="textEditor"]';
 const BUTTON = 'button[name="Enviar"]';
 
 describe('Templates', () => {
