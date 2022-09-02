@@ -18,6 +18,7 @@ const BODY_MOCK = [
 ];
 
 const EDIT_BUTTON = 'button[name="edit"]';
+const DELETE_BUTTON = 'button[name="delete"]';
 const REDIRECT_LINK = 'a[class="history-link"]';
 const TEXT_CARD_SECTION = 'section[class="blog-post"]';
 
@@ -50,14 +51,21 @@ describe('Templates', () => {
 
     it('should render a <BlogCard />', () => {
       expect(blogCard).toBeTruthy();
-      expect(blogCard?.children.length).toBe(2);
+      expect(blogCard?.children.length).toBe(3);
     });
 
-    it('should render a <Button />', () => {
+    it('should render a edit <Button />', () => {
       const editBtn = blogCard?.querySelector(EDIT_BUTTON);
 
       expect(editBtn).toBeTruthy();
       expect(editBtn).toBeInstanceOf(HTMLButtonElement);
+    });
+
+    it('should render a delete <Button />', () => {
+      const deleteBtn = blogCard?.querySelector(DELETE_BUTTON);
+
+      expect(deleteBtn).toBeTruthy();
+      expect(deleteBtn).toBeInstanceOf(HTMLButtonElement);
     });
 
     it('should render a <RedirectLink />', () => {

@@ -14,7 +14,8 @@ nav {
   margin-left: 10px;
 }
 
-.home-link, .upload-link {
+.home-link,
+.upload-link {
   align-items: center;
   color: #fff;
   display: flex;
@@ -22,24 +23,27 @@ nav {
   height: 5vh;
   padding: 0 10px;
   text-decoration: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.home-link:hover, .upload-link:hover {
+.home-link:hover,
+.upload-link:hover {
   background-color: rgba(255, 130, 130, 0.6);
   border-radius: 0 0 1px 1px;
   box-shadow: #a2a2a2 0 1px 1px;
-  transition: .7s;
+  transition: 0.7s;
 }
 
 @media screen and (max-width: 1280px) {
-  .home-link, .upload-link {
+  .home-link,
+  .upload-link {
     height: 7vh;
   }
 }
 
 @media screen and (min-width: 410px) and (max-width: 915px) {
-  .home-link, .upload-link {
+  .home-link,
+  .upload-link {
     font-size: 1.2rem;
   }
 }

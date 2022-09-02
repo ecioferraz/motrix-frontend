@@ -16,7 +16,7 @@ export default function BlogPosts() {
     };
 
     getPosts();
-  }, []);
+  }, [posts]);
 
   return isLoading ? (
     <TextCard className='loading' text='Carregando...' />
@@ -28,6 +28,7 @@ export default function BlogPosts() {
           id={id}
           key={history[0].updatedAt.toString()}
           title={history[0].title}
+          posts={posts}
         />
       ))}
     </section>

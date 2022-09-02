@@ -12,9 +12,9 @@ export default function PostForm() {
   const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
-  
+
   const { id } = useParams();
-  
+
   useEffect(() => {
     if (id) {
       const getPost = async () => {
@@ -35,31 +35,32 @@ export default function PostForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { data } = id
-      ? await updateData(`/${id}`, {title, body, updatedAt: new Date()})
-      : await postData('/', {title, body, updatedAt: new Date()});
+      ? await updateData(`/${id}`, { title, body, updatedAt: new Date() })
+      : await postData('/', { title, body, updatedAt: new Date() });
     setTitle('');
     setBody('');
     navigate(`/${data._id}`);
   };
 
-  return (
-    isLoading ? <TextCard className='loading' text='Carregando....' />
-      : <form onSubmit={handleSubmit}>
-        <TextInput
-          className='title-input'
-          handleChange={({ target: { value } }) => setTitle(value)}
-          labelText='Título:'
-          name='title'
-          value={title}
-          minLength='3'
-        />
-        <Editor setBody={setBody} content={body} />
-        <Button
-          className='submit-btn'
-          name='Enviar'
-          type='submit'
-          disabled={title.length < 3}
-        />
-      </form>
+  return isLoading ? (
+    <TextCard className='loading' text='Carregando....' />
+  ) : (
+    <form onSubmit={handleSubmit}>
+      <TextInput
+        className='title-input'
+        handleChange={({ target: { value } }) => setTitle(value)}
+        labelText='Título:'
+        name='title'
+        value={title}
+        minLength='3'
+      />
+      <Editor setBody={setBody} content={body} />
+      <Button
+        className='submit-btn'
+        name='Enviar'
+        type='submit'
+        disabled={title.length < 3}
+      />
+    </form>
   );
 }

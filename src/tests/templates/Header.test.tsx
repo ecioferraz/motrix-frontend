@@ -10,18 +10,18 @@ const UPLOAD_LINK = 'a[class="upload-link"]';
 describe('Templates', () => {
   let container: HTMLDivElement | null = null;
   let root: Root | null = null;
-  
+
   beforeAll(() => {
     container = document.createElement('div');
     document.body.appendChild(container);
     root = createRoot(container);
   });
-  
+
   afterAll(() => act(() => root?.unmount()));
-  
+
   describe('<Header />', () => {
     let header: HTMLHeadElement | null | undefined;
-    
+
     beforeEach(() => {
       act(() => {
         root?.render(
