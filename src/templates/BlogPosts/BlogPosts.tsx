@@ -4,8 +4,6 @@ import IApiPost from '../../interfaces/IPost';
 import { getData } from '../../services/APIRequests';
 import { BlogCard } from '../';
 
-import './styles.css';
-
 export default function BlogPosts() {
   const [posts, setPosts] = useState<IApiPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
