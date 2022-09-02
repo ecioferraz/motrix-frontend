@@ -1,5 +1,5 @@
 header {
-  background-color: rgb(0, 0, 0, .8);
+  background-color: rgb(240, 84, 84);
   border-bottom: 1px groove #fff;
   box-shadow: #858383 0 2px 15px;
   color: #fff;
@@ -26,8 +26,20 @@ nav {
 }
 
 .home-link:hover, .upload-link:hover {
-  background-color: rgba(230, 230, 230, 0.8);
+  background-color: rgba(255, 130, 130, 0.6);
   border-radius: 0 0 1px 1px;
-  box-shadow: #424242 0 1px 3px;
+  box-shadow: #a2a2a2 0 1px 1px;
   transition: .7s;
+}
+
+@media screen and (max-width: 1280px) {
+  .home-link, .upload-link {
+    height: 7vh;
+  }
+}
+
+@media screen and (min-width: 410px) and (max-width: 915px) {
+  .home-link, .upload-link {
+    font-size: 1.2rem;
+  }
 }
