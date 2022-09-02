@@ -50,7 +50,7 @@ describe('Templates', () => {
 
     it('should render a <BlogCard />', () => {
       expect(blogCard).toBeTruthy();
-      expect(blogCard?.children.length).toBe(3);
+      expect(blogCard?.children.length).toBe(2);
     });
 
     it('should render a <Button />', () => {
