@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Button, RedirectLink, TextCard } from '../../components';
 import parse from 'html-react-parser';
 import { IPost } from '../../interfaces/IPost';
@@ -15,8 +15,9 @@ interface IBlogCard {
 export default function BlogCard({ body, id, title }: IBlogCard) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const { id: idParam } = useParams();
 
-  const handleClick = () => navigate(`/edit/${id}`);
+  const handleClick = () => navigate(`/edit/${id || idParam}`);
 
   return (
     <div className='blog-card'>
@@ -38,7 +39,7 @@ export default function BlogCard({ body, id, title }: IBlogCard) {
           <RedirectLink
             className='history-link'
             name='(edited)'
-            path={`post/history/${id}`}
+            path={`post/history/${id || idParam}`}
           />
         )}
         <div className='body'>{parse(body[0].body)}</div>
