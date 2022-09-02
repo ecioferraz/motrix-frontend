@@ -4,6 +4,8 @@ import { Button, TextCard, TextInput } from '../../components';
 import { getData, postData, updateData } from '../../services/APIRequests';
 import Editor from '../Editor';
 
+import './styles.css';
+
 export default function PostForm() {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');

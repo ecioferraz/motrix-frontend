@@ -1,0 +1,26 @@
+form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+}
+
+form > * {
+  margin: 1.8vh;
+}
+
+.title-input {
+  margin-left: 1vw;
+  height: 2vh;
+}
+
+.submit-btn {
+  margin-top: 0;
+  align-items: center;
+  box-shadow: #858383 0 2px 7.5px;
+  display: flex;
+  font-weight: 500;
+  height: 3.5vh;
+  padding: 0 10px;
+}
