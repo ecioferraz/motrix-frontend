@@ -10,7 +10,7 @@ export default function Home() {
       <TextCard
         as='h1'
         className='blog-title'
-        text='Moxxie Blog'
+        text='Motrix Blog'
       />
       <BlogPosts />
     </main>
