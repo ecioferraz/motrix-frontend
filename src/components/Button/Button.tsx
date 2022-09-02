@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEdit } from 'react-icons/fa';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 import IButton from './IButton';
 
 export default function Button({
@@ -9,6 +9,17 @@ export default function Button({
   name,
   type,
 }: IButton) {
+  const handleButtonName = () => {
+    switch (name) {
+    case 'edit':
+      return (<FaEdit />);
+    case 'delete':
+      return (<FaTrash />);
+    default:
+      return name;
+    }
+  };
+  
   return (
     <button
       className={className}
@@ -17,11 +28,7 @@ export default function Button({
       onClick={handleClick}
       type={type}
     >
-      {name === 'edit' ? (
-        <FaEdit />
-      ) : (
-        name
-      )}
+      {handleButtonName()}
     </button>
   );
 }
