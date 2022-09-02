@@ -6,7 +6,7 @@ export interface IPost {
 
 interface IApiPost {
   history: IPost[];
-  _id: string,
+  _id: string;
 }
 
 export default IApiPost;

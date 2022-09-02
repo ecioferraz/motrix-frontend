@@ -11,18 +11,18 @@ const BUTTON = 'button[name="Enviar"]';
 describe('Templates', () => {
   let container: HTMLDivElement | null = null;
   let root: Root | null = null;
-  
+
   beforeAll(() => {
     container = document.createElement('div');
     document.body.appendChild(container);
     root = createRoot(container);
   });
-  
+
   afterAll(() => act(() => root?.unmount()));
-  
+
   describe('<PostForm />', () => {
     let postForm: HTMLFormElement | null | undefined;
-    
+
     beforeEach(() => {
       act(() => {
         root?.render(
@@ -45,7 +45,6 @@ describe('Templates', () => {
 
       expect(textInput).toBeTruthy();
       expect(textInput).toBeInstanceOf(HTMLInputElement);
-
     });
 
     it('should render a <Editor />', () => {

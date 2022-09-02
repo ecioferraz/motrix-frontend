@@ -35,7 +35,7 @@ export default function BlogCard({
       const filteredPosts = posts?.filter((post) => post._id !== id);
       setPosts(filteredPosts);
     }
-    
+
     navigate('/');
   };
 
