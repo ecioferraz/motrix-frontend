@@ -20,18 +20,18 @@ export default function BlogPosts() {
     getPosts();
   }, []);
 
-  return isLoading
-    ? <TextCard className='loading' text='Carregando...' />
-    : (
-      <section className='blog-cards'>
-        {posts.map(({ history, _id: id }) => (
-          <BlogCard
-            body={history}
-            id={id}
-            key={history[0].updatedAt.toString()}
-            title={history[0].title}
-          />
-        ))}
-      </section>
-    );
+  return isLoading ? (
+    <TextCard className='loading' text='Carregando...' />
+  ) : (
+    <section className='blog-cards'>
+      {posts.map(({ history, _id: id }) => (
+        <BlogCard
+          body={history}
+          id={id}
+          key={history[0].updatedAt.toString()}
+          title={history[0].title}
+        />
+      ))}
+    </section>
+  );
 }
